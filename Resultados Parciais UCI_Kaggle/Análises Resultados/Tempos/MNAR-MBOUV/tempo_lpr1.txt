@@ -1,0 +1,193 @@
+Dataset = wiscosin com MD = 10
+Tempo de treinamento para fold = 0 foi = 0.2971 s
+Tempo de treinamento para fold = 1 foi = 0.1784 s
+Tempo de treinamento para fold = 2 foi = 0.1814 s
+Tempo de treinamento para fold = 3 foi = 0.1827 s
+Tempo de treinamento para fold = 4 foi = 0.1811 s
+Dataset = wiscosin com MD = 20
+Tempo de treinamento para fold = 0 foi = 0.1845 s
+Tempo de treinamento para fold = 1 foi = 0.1887 s
+Tempo de treinamento para fold = 2 foi = 0.1859 s
+Tempo de treinamento para fold = 3 foi = 0.1887 s
+Tempo de treinamento para fold = 4 foi = 0.1949 s
+Dataset = wiscosin com MD = 40
+Tempo de treinamento para fold = 0 foi = 0.2050 s
+Tempo de treinamento para fold = 1 foi = 0.2184 s
+Tempo de treinamento para fold = 2 foi = 0.2065 s
+Tempo de treinamento para fold = 3 foi = 0.2195 s
+Tempo de treinamento para fold = 4 foi = 0.2144 s
+Dataset = wiscosin com MD = 60
+Tempo de treinamento para fold = 0 foi = 0.2966 s
+Tempo de treinamento para fold = 1 foi = 0.3550 s
+Tempo de treinamento para fold = 2 foi = 0.3461 s
+Tempo de treinamento para fold = 3 foi = 0.3381 s
+Tempo de treinamento para fold = 4 foi = 0.3250 s
+Dataset = pima_diabetes com MD = 10
+Tempo de treinamento para fold = 0 foi = 0.0785 s
+Tempo de treinamento para fold = 1 foi = 0.0801 s
+Tempo de treinamento para fold = 2 foi = 0.0785 s
+Tempo de treinamento para fold = 3 foi = 0.0796 s
+Tempo de treinamento para fold = 4 foi = 0.0787 s
+Dataset = pima_diabetes com MD = 20
+Tempo de treinamento para fold = 0 foi = 0.0793 s
+Tempo de treinamento para fold = 1 foi = 0.0828 s
+Tempo de treinamento para fold = 2 foi = 0.0835 s
+Tempo de treinamento para fold = 3 foi = 0.0805 s
+Tempo de treinamento para fold = 4 foi = 0.0804 s
+Dataset = pima_diabetes com MD = 40
+Tempo de treinamento para fold = 0 foi = 0.0929 s
+Tempo de treinamento para fold = 1 foi = 0.0903 s
+Tempo de treinamento para fold = 2 foi = 0.0953 s
+Tempo de treinamento para fold = 3 foi = 0.0950 s
+Tempo de treinamento para fold = 4 foi = 0.0939 s
+Dataset = pima_diabetes com MD = 60
+Tempo de treinamento para fold = 0 foi = 0.1361 s
+Tempo de treinamento para fold = 1 foi = 0.1386 s
+Tempo de treinamento para fold = 2 foi = 0.1944 s
+Tempo de treinamento para fold = 3 foi = 0.1878 s
+Tempo de treinamento para fold = 4 foi = 0.1817 s
+Dataset = bc_coimbra com MD = 10
+Tempo de treinamento para fold = 0 foi = 0.0822 s
+Tempo de treinamento para fold = 1 foi = 0.0707 s
+Tempo de treinamento para fold = 2 foi = 0.0680 s
+Tempo de treinamento para fold = 3 foi = 0.0695 s
+Tempo de treinamento para fold = 4 foi = 0.0673 s
+Dataset = bc_coimbra com MD = 20
+Tempo de treinamento para fold = 0 foi = 0.0652 s
+Tempo de treinamento para fold = 1 foi = 0.0653 s
+Tempo de treinamento para fold = 2 foi = 0.0628 s
+Tempo de treinamento para fold = 3 foi = 0.0624 s
+Tempo de treinamento para fold = 4 foi = 0.0633 s
+Dataset = bc_coimbra com MD = 40
+Tempo de treinamento para fold = 0 foi = 0.0635 s
+Tempo de treinamento para fold = 1 foi = 0.0650 s
+Tempo de treinamento para fold = 2 foi = 0.0665 s
+Tempo de treinamento para fold = 3 foi = 0.0641 s
+Tempo de treinamento para fold = 4 foi = 0.0635 s
+Dataset = bc_coimbra com MD = 60
+Tempo de treinamento para fold = 0 foi = 0.0727 s
+Tempo de treinamento para fold = 1 foi = 0.0716 s
+Tempo de treinamento para fold = 2 foi = 0.0723 s
+Tempo de treinamento para fold = 3 foi = 0.0875 s
+Tempo de treinamento para fold = 4 foi = 0.0778 s
+Dataset = indian_liver com MD = 10
+Tempo de treinamento para fold = 0 foi = 0.0671 s
+Tempo de treinamento para fold = 1 foi = 0.1085 s
+Tempo de treinamento para fold = 2 foi = 0.0870 s
+Tempo de treinamento para fold = 3 foi = 0.0877 s
+Tempo de treinamento para fold = 4 foi = 0.0866 s
+Dataset = indian_liver com MD = 20
+Tempo de treinamento para fold = 0 foi = 0.0880 s
+Tempo de treinamento para fold = 1 foi = 0.0912 s
+Tempo de treinamento para fold = 2 foi = 0.0895 s
+Tempo de treinamento para fold = 3 foi = 0.0894 s
+Tempo de treinamento para fold = 4 foi = 0.0908 s
+Dataset = indian_liver com MD = 40
+Tempo de treinamento para fold = 0 foi = 0.0982 s
+Tempo de treinamento para fold = 1 foi = 0.1032 s
+Tempo de treinamento para fold = 2 foi = 0.1033 s
+Tempo de treinamento para fold = 3 foi = 0.1047 s
+Tempo de treinamento para fold = 4 foi = 0.1012 s
+Dataset = indian_liver com MD = 60
+Tempo de treinamento para fold = 0 foi = 0.1434 s
+Tempo de treinamento para fold = 1 foi = 0.1646 s
+Tempo de treinamento para fold = 2 foi = 0.1502 s
+Tempo de treinamento para fold = 3 foi = 0.1802 s
+Tempo de treinamento para fold = 4 foi = 0.1868 s
+Dataset = parkinsons com MD = 10
+Tempo de treinamento para fold = 0 foi = 0.1495 s
+Tempo de treinamento para fold = 1 foi = 0.1866 s
+Tempo de treinamento para fold = 2 foi = 0.1424 s
+Tempo de treinamento para fold = 3 foi = 0.1502 s
+Tempo de treinamento para fold = 4 foi = 0.1474 s
+Dataset = parkinsons com MD = 20
+Tempo de treinamento para fold = 0 foi = 0.1474 s
+Tempo de treinamento para fold = 1 foi = 0.1375 s
+Tempo de treinamento para fold = 2 foi = 0.1398 s
+Tempo de treinamento para fold = 3 foi = 0.1437 s
+Tempo de treinamento para fold = 4 foi = 0.1435 s
+Dataset = parkinsons com MD = 40
+Tempo de treinamento para fold = 0 foi = 0.1578 s
+Tempo de treinamento para fold = 1 foi = 0.1588 s
+Tempo de treinamento para fold = 2 foi = 0.1606 s
+Tempo de treinamento para fold = 3 foi = 0.1532 s
+Tempo de treinamento para fold = 4 foi = 0.1548 s
+Dataset = parkinsons com MD = 60
+Tempo de treinamento para fold = 0 foi = 0.2217 s
+Tempo de treinamento para fold = 1 foi = 0.2156 s
+Tempo de treinamento para fold = 2 foi = 0.2056 s
+Tempo de treinamento para fold = 3 foi = 0.2652 s
+Tempo de treinamento para fold = 4 foi = 0.2162 s
+Dataset = mammographic_masses com MD = 10
+Tempo de treinamento para fold = 0 foi = 0.1035 s
+Tempo de treinamento para fold = 1 foi = 0.1030 s
+Tempo de treinamento para fold = 2 foi = 0.1031 s
+Tempo de treinamento para fold = 3 foi = 0.1030 s
+Tempo de treinamento para fold = 4 foi = 0.1029 s
+Dataset = mammographic_masses com MD = 20
+Tempo de treinamento para fold = 0 foi = 0.1074 s
+Tempo de treinamento para fold = 1 foi = 0.1090 s
+Tempo de treinamento para fold = 2 foi = 0.1106 s
+Tempo de treinamento para fold = 3 foi = 0.1071 s
+Tempo de treinamento para fold = 4 foi = 0.1094 s
+Dataset = mammographic_masses com MD = 40
+Tempo de treinamento para fold = 0 foi = 0.1235 s
+Tempo de treinamento para fold = 1 foi = 0.1295 s
+Tempo de treinamento para fold = 2 foi = 0.1292 s
+Tempo de treinamento para fold = 3 foi = 0.1271 s
+Tempo de treinamento para fold = 4 foi = 0.1280 s
+Dataset = mammographic_masses com MD = 60
+Tempo de treinamento para fold = 0 foi = 0.2061 s
+Tempo de treinamento para fold = 1 foi = 0.4350 s
+Tempo de treinamento para fold = 2 foi = 0.1681 s
+Tempo de treinamento para fold = 3 foi = 0.2092 s
+Tempo de treinamento para fold = 4 foi = 0.2087 s
+Dataset = hcv_egyptian com MD = 10
+Tempo de treinamento para fold = 0 foi = 0.3601 s
+Tempo de treinamento para fold = 1 foi = 0.3354 s
+Tempo de treinamento para fold = 2 foi = 0.3350 s
+Tempo de treinamento para fold = 3 foi = 0.3324 s
+Tempo de treinamento para fold = 4 foi = 0.3329 s
+Dataset = hcv_egyptian com MD = 20
+Tempo de treinamento para fold = 0 foi = 0.3507 s
+Tempo de treinamento para fold = 1 foi = 0.3442 s
+Tempo de treinamento para fold = 2 foi = 0.3471 s
+Tempo de treinamento para fold = 3 foi = 0.3414 s
+Tempo de treinamento para fold = 4 foi = 0.3455 s
+Dataset = hcv_egyptian com MD = 40
+Tempo de treinamento para fold = 0 foi = 0.4003 s
+Tempo de treinamento para fold = 1 foi = 0.4320 s
+Tempo de treinamento para fold = 2 foi = 0.4228 s
+Tempo de treinamento para fold = 3 foi = 0.6264 s
+Tempo de treinamento para fold = 4 foi = 0.4064 s
+Dataset = hcv_egyptian com MD = 60
+Tempo de treinamento para fold = 0 foi = 0.8335 s
+Tempo de treinamento para fold = 1 foi = 0.7831 s
+Tempo de treinamento para fold = 2 foi = 0.9393 s
+Tempo de treinamento para fold = 3 foi = 0.7648 s
+Tempo de treinamento para fold = 4 foi = 0.7298 s
+Dataset = thoracic_surgey com MD = 10
+Tempo de treinamento para fold = 0 foi = 0.1629 s
+Tempo de treinamento para fold = 1 foi = 0.1824 s
+Tempo de treinamento para fold = 2 foi = 0.1829 s
+Tempo de treinamento para fold = 3 foi = 0.1829 s
+Tempo de treinamento para fold = 4 foi = 0.1904 s
+Dataset = thoracic_surgey com MD = 20
+Tempo de treinamento para fold = 0 foi = 0.1823 s
+Tempo de treinamento para fold = 1 foi = 0.1845 s
+Tempo de treinamento para fold = 2 foi = 0.1857 s
+Tempo de treinamento para fold = 3 foi = 0.1915 s
+Tempo de treinamento para fold = 4 foi = 0.1875 s
+Dataset = thoracic_surgey com MD = 40
+Tempo de treinamento para fold = 0 foi = 0.1943 s
+Tempo de treinamento para fold = 1 foi = 0.1997 s
+Tempo de treinamento para fold = 2 foi = 0.2004 s
+Tempo de treinamento para fold = 3 foi = 0.2001 s
+Tempo de treinamento para fold = 4 foi = 0.3474 s
+Dataset = thoracic_surgey com MD = 60
+Tempo de treinamento para fold = 0 foi = 0.2650 s
+Tempo de treinamento para fold = 1 foi = 0.2909 s
+Tempo de treinamento para fold = 2 foi = 0.2991 s
+Tempo de treinamento para fold = 3 foi = 0.3324 s
+Tempo de treinamento para fold = 4 foi = 0.2786 s
+Tempo de total de processamento total para LPR1 foi = 140.7418 s

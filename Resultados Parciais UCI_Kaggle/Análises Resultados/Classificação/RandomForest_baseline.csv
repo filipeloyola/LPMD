@@ -1,0 +1,9 @@
+,dataset,accuracy,recall,precision
+0,wiscosin,0.9578,0.9297,0.957
+1,pima_diabetes,0.7696,0.5598,0.7221
+2,bc_coimbra,0.6902,0.56,0.7467
+3,indian_liver,0.6943,0.877,0.7439
+4,parkinsons,0.7949,0.9389,0.8259
+5,mammographic_masses,0.8048,0.8535,0.771
+6,hcv_egyptian,0.2325,0.2325,0.2325
+7,thoracic_surgey,0.8511,0.0,0.0

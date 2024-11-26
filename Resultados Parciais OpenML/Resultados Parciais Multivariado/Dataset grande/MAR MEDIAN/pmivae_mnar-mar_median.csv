@@ -1,0 +1,9 @@
+,Model,Dataset,Missing Rate,MAE_mean,MAE_std
+0,pmivae,sylva_prior,10,0.0604,0.0086
+1,pmivae,sylva_prior,20,0.0583,0.0079
+2,pmivae,sylva_prior,40,0.0615,0.0056
+3,pmivae,sylva_prior,60,0.0607,0.0152
+4,pmivae,fri_c4_1000_100,10,0.2511,0.1825
+5,pmivae,fri_c4_1000_100,20,0.151,0.0886
+6,pmivae,fri_c4_1000_100,40,0.1605,0.058
+7,pmivae,fri_c4_1000_100,60,0.2634,0.1063

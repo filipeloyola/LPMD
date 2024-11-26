@@ -1,0 +1,77 @@
+Dataset =        col1  col2  col3  col4  col5  col6  col7  ...  col103  col104  col105  col106  col107  col108  target
+0       495    42   136   251   290   294   834  ...       0       0       0       0       0       0       0
+1       529   916   151    21   228   679   771  ...       0       0       0       0       0       0       0
+2       672   624    76    21   223   704   838  ...       0       0       0       0       0       0       0
+3       401   400   151    86   243   205   924  ...       0       0       0       0       0       0       0
+4       614   230   212   154   274   468   940  ...       0       0       0       0       0       0       0
+...     ...   ...   ...   ...   ...   ...   ...  ...     ...     ...     ...     ...     ...     ...     ...
+14390   745   652   272   405   214   211   732  ...       0       0       0       0       0       0       0
+14391   571   155   151   144   245   563   893  ...       0       0       0       0       0       0       0
+14392   656   921   151   561   389   611   771  ...       0       0       0       0       0       0       0
+14393   444   441   318   107   275   215   932  ...       0       0       0       0       0       0       0
+14394   706   205   348    21   216   220   944  ...       0       0       0       0       0       0       0
+
+[14395 rows x 109 columns] com MD = 10
+Tempo de treinamento para fold = 0 foi = 59.6807 s
+Tempo de treinamento para fold = 1 foi = 28.8068 s
+Tempo de treinamento para fold = 2 foi = 15.6277 s
+Tempo de treinamento para fold = 3 foi = 15.5142 s
+Tempo de treinamento para fold = 4 foi = 14.9495 s
+Dataset =        col1  col2  col3  col4  col5  col6  col7  ...  col103  col104  col105  col106  col107  col108  target
+0       495    42   136   251   290   294   834  ...       0       0       0       0       0       0       0
+1       529   916   151    21   228   679   771  ...       0       0       0       0       0       0       0
+2       672   624    76    21   223   704   838  ...       0       0       0       0       0       0       0
+3       401   400   151    86   243   205   924  ...       0       0       0       0       0       0       0
+4       614   230   212   154   274   468   940  ...       0       0       0       0       0       0       0
+...     ...   ...   ...   ...   ...   ...   ...  ...     ...     ...     ...     ...     ...     ...     ...
+14390   745   652   272   405   214   211   732  ...       0       0       0       0       0       0       0
+14391   571   155   151   144   245   563   893  ...       0       0       0       0       0       0       0
+14392   656   921   151   561   389   611   771  ...       0       0       0       0       0       0       0
+14393   444   441   318   107   275   215   932  ...       0       0       0       0       0       0       0
+14394   706   205   348    21   216   220   944  ...       0       0       0       0       0       0       0
+
+[14395 rows x 109 columns] com MD = 20
+Tempo de treinamento para fold = 0 foi = 20.0261 s
+Tempo de treinamento para fold = 1 foi = 20.1608 s
+Tempo de treinamento para fold = 2 foi = 20.9100 s
+Tempo de treinamento para fold = 3 foi = 19.6908 s
+Tempo de treinamento para fold = 4 foi = 18.9766 s
+Dataset =        col1  col2  col3  col4  col5  col6  col7  ...  col103  col104  col105  col106  col107  col108  target
+0       495    42   136   251   290   294   834  ...       0       0       0       0       0       0       0
+1       529   916   151    21   228   679   771  ...       0       0       0       0       0       0       0
+2       672   624    76    21   223   704   838  ...       0       0       0       0       0       0       0
+3       401   400   151    86   243   205   924  ...       0       0       0       0       0       0       0
+4       614   230   212   154   274   468   940  ...       0       0       0       0       0       0       0
+...     ...   ...   ...   ...   ...   ...   ...  ...     ...     ...     ...     ...     ...     ...     ...
+14390   745   652   272   405   214   211   732  ...       0       0       0       0       0       0       0
+14391   571   155   151   144   245   563   893  ...       0       0       0       0       0       0       0
+14392   656   921   151   561   389   611   771  ...       0       0       0       0       0       0       0
+14393   444   441   318   107   275   215   932  ...       0       0       0       0       0       0       0
+14394   706   205   348    21   216   220   944  ...       0       0       0       0       0       0       0
+
+[14395 rows x 109 columns] com MD = 40
+Tempo de treinamento para fold = 0 foi = 30.0610 s
+Tempo de treinamento para fold = 1 foi = 31.4155 s
+Tempo de treinamento para fold = 2 foi = 56.2133 s
+Tempo de treinamento para fold = 3 foi = 34.1366 s
+Tempo de treinamento para fold = 4 foi = 31.5445 s
+Dataset =        col1  col2  col3  col4  col5  col6  col7  ...  col103  col104  col105  col106  col107  col108  target
+0       495    42   136   251   290   294   834  ...       0       0       0       0       0       0       0
+1       529   916   151    21   228   679   771  ...       0       0       0       0       0       0       0
+2       672   624    76    21   223   704   838  ...       0       0       0       0       0       0       0
+3       401   400   151    86   243   205   924  ...       0       0       0       0       0       0       0
+4       614   230   212   154   274   468   940  ...       0       0       0       0       0       0       0
+...     ...   ...   ...   ...   ...   ...   ...  ...     ...     ...     ...     ...     ...     ...     ...
+14390   745   652   272   405   214   211   732  ...       0       0       0       0       0       0       0
+14391   571   155   151   144   245   563   893  ...       0       0       0       0       0       0       0
+14392   656   921   151   561   389   611   771  ...       0       0       0       0       0       0       0
+14393   444   441   318   107   275   215   932  ...       0       0       0       0       0       0       0
+14394   706   205   348    21   216   220   944  ...       0       0       0       0       0       0       0
+
+[14395 rows x 109 columns] com MD = 60
+Tempo de treinamento para fold = 0 foi = 40.1571 s
+Tempo de treinamento para fold = 1 foi = 42.9219 s
+Tempo de treinamento para fold = 2 foi = 42.2556 s
+Tempo de treinamento para fold = 3 foi = 39.9548 s
+Tempo de treinamento para fold = 4 foi = 39.7454 s
+Tempo de total de processamento total para LPR0 foi = 2902.2906 s

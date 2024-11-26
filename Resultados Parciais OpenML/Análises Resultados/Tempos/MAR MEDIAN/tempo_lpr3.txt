@@ -1,0 +1,49 @@
+Dataset = sylva_prior com MD = 10
+Tempo de treinamento para fold = 0 foi = 18.4041 s
+Tempo de treinamento para fold = 1 foi = 148.8938 s
+Tempo de treinamento para fold = 2 foi = 148.8550 s
+Tempo de treinamento para fold = 3 foi = 17.8946 s
+Tempo de treinamento para fold = 4 foi = 18.2630 s
+Dataset = sylva_prior com MD = 20
+Tempo de treinamento para fold = 0 foi = 214.3007 s
+Tempo de treinamento para fold = 1 foi = 214.9059 s
+Tempo de treinamento para fold = 2 foi = 215.7674 s
+Tempo de treinamento para fold = 3 foi = 215.6862 s
+Tempo de treinamento para fold = 4 foi = 23.3220 s
+Dataset = sylva_prior com MD = 40
+Tempo de treinamento para fold = 0 foi = 379.8067 s
+Tempo de treinamento para fold = 1 foi = 379.6371 s
+Tempo de treinamento para fold = 2 foi = 381.5743 s
+Tempo de treinamento para fold = 3 foi = 386.9252 s
+Tempo de treinamento para fold = 4 foi = 378.7572 s
+Dataset = sylva_prior com MD = 60
+Tempo de treinamento para fold = 0 foi = 505.1824 s
+Tempo de treinamento para fold = 1 foi = 501.2517 s
+Tempo de treinamento para fold = 2 foi = 494.2502 s
+Tempo de treinamento para fold = 3 foi = 494.8647 s
+Tempo de treinamento para fold = 4 foi = 500.8074 s
+Dataset = fri_c4_1000_100 com MD = 10
+Tempo de treinamento para fold = 0 foi = 0.1284 s
+Tempo de treinamento para fold = 1 foi = 0.1284 s
+Tempo de treinamento para fold = 2 foi = 0.1280 s
+Tempo de treinamento para fold = 3 foi = 0.1308 s
+Tempo de treinamento para fold = 4 foi = 0.1292 s
+Dataset = fri_c4_1000_100 com MD = 20
+Tempo de treinamento para fold = 0 foi = 0.1546 s
+Tempo de treinamento para fold = 1 foi = 0.1551 s
+Tempo de treinamento para fold = 2 foi = 0.1590 s
+Tempo de treinamento para fold = 3 foi = 0.1904 s
+Tempo de treinamento para fold = 4 foi = 0.1659 s
+Dataset = fri_c4_1000_100 com MD = 40
+Tempo de treinamento para fold = 0 foi = 0.2621 s
+Tempo de treinamento para fold = 1 foi = 0.2400 s
+Tempo de treinamento para fold = 2 foi = 0.3035 s
+Tempo de treinamento para fold = 3 foi = 0.2402 s
+Tempo de treinamento para fold = 4 foi = 0.3112 s
+Dataset = fri_c4_1000_100 com MD = 60
+Tempo de treinamento para fold = 0 foi = 0.5251 s
+Tempo de treinamento para fold = 1 foi = 0.5170 s
+Tempo de treinamento para fold = 2 foi = 0.3346 s
+Tempo de treinamento para fold = 3 foi = 0.3857 s
+Tempo de treinamento para fold = 4 foi = 0.3437 s
+Tempo de total de processamento total para LPR3 foi = 8158.2898 s
