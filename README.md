@@ -1,4 +1,4 @@
-# Comparação de algoritmos de Imputação de Dados
+# LPMD: Label Propagation for Missing Data Imputation
 
 Metodologia:
 - Rodar o código presente no ```experimentos_multivariado_classifica.py``` variando os imputadores entre: mean, knn, mice, pmivae, saei; <br>
