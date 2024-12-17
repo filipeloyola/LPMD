@@ -1,17 +1,22 @@
 # LPMD: Label Propagation for Missing Data Imputation
 
-This repository contains files about the article "A Label Propagation Approach for Missing Data Imputation" submitted to the IEEE Access jornal. In this repository, you can find the ".py" files used in the research, as well as directories containing the datastes and partial results. The LPMD algorithm is available in the file "LPMD.py". To use this pipeline, follow these steps:
+This repository contains files about the article "A Label Propagation Approach for Missing Data Imputation" submitted to the IEEE Access jornal. In this repository, you can find the ".py" files used in the research, as well as directories containing the datastes and partial results. The LPMD algorithm is available in the file  ```LPMD.py```. To use this pipeline, follow these steps:
 
-- Rodar o código presente no ```experimentos_multivariado_classifica.py``` variando os imputadores entre: mean, knn, mice, pmivae, saei; <br>
+- Run the code in ```experimentos_multivariado_classifica.py``` varying the inputs between: mean, knn, mice, pmivae, saei, lpmd
 
-- Run the code in ```experimentos_multivariado_classifica.py``` varying the inputs between: mean, knn, mice, pmivae, saei
+- Run the code ```gera_tabela_final.py``` to have the results of all the inputs in the same spreadsheet file;
+  
+- Run the code ```analises.py``` to have a heatmap of the MAE of each input;
+  
+- In Excel, format the results table for the MAE metric;
 
-Com esta etapa cumprida, os resultados da classificação usando a Árvore de Decisão, os arquivos.arff para a análise de complexidade, os resultados da imputação e os tempos de treinamento de cada algoritmo já foram gerados. Portanto, basta seguir os próximos passos:
+- For classification, run the code ```gera_tabela_classificacao.py``` to have a spreadsheet with the accuracy results, another with precision and finally recall;
+  
+- In Excel, format the table and place conditional formatting for values ​​greater than zero;
 
-- Rodar o código ```gera_tabela_final.py``` para ter os resultados de todos os imputadores em um mesmo arquivo Excel;
-- Rodar o código ```analises.py``` para ter um heatmap dos MAE de cada imputador;
-- No Excel, formatar a tabela de resultados para a métrica MAE;
+## Citation
+In construction.
 
-- Para a classificação, rodar o código ```gera_tabela_classificacao.py``` para ter uma sheet os resultados da acurácia, outra dee precisão e por fim recall da Árvore de Decisão
-- No excel, formatar a tabela e colocar uma formatação condicional para os valores maiores que zero;
+## Acknowledgements
+This research was supported in part by the Coordenação de Aperfeiçoamento de Pessoalde Nível Superior - Brasil (CAPES) - Finance Code 001. The authors gratefully acknowledge the Brazilian funding agency FAPESP (Fundação Amparo à Pesquisa do Estado de São Paulo) for the COVID-19 Data Sharing repository.
 
