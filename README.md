@@ -2,7 +2,7 @@
 
 This repository contains files about the article "A Label Propagation Approach for Missing Data Imputation" submitted to the IEEE Access journal. In this repository, you can find the ".py" files used in the research, as well as directories containing the datasets and partial results. The LPMD algorithm is available in the file  ```LPMD.py```. To use this pipeline, follow these steps:
 
-- Run the code in ```experimentos_multivariado_classifica.py``` varying the inputs between: mean, knn, mice, pmivae, saei, lpmd
+- Run the code ```experimentos_multivariado_classifica.py``` varying the inputs between: mean, knn, mice, pmivae, saei, lpmd
 
 - Run the code ```gera_tabela_final.py``` to have the results of all the inputs in the same spreadsheet file;
   
