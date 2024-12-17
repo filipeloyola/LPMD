@@ -18,5 +18,7 @@ This repository contains files about the article "A Label Propagation Approach f
 In construction.
 
 ## Acknowledgements
-This research was supported in part by the Coordenação de Aperfeiçoamento de Pessoalde Nível Superior - Brasil (CAPES) - Finance Code 001. The authors gratefully acknowledge the Brazilian funding agency FAPESP (Fundação Amparo à Pesquisa do Estado de São Paulo) for the COVID-19 Data Sharing repository.
+This work was supported in part by the Coordenação de Aperfeiçoamento de Pessoal de Nível Superior - Brasil (CAPES) - Finance Code
+001 and Brazilian funding agencies FAPESP (Fundação Amparo à Pesquisa do Estado de São Paulo) under grants 2022/10553-6,
+2023/13688-2, and 2021/06870-3.
 
