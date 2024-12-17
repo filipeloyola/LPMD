@@ -1,6 +1,7 @@
 # LPMD: Label Propagation for Missing Data Imputation
 
-Metodologia:
+This repository contains files about the article "A Label Propagation Approach for Missing Data Imputation" submitted to the IEEE Access jornal. In this repository, you can find the ".py" files used in the research, as well as directories containing the datastes and partial results. The LPMD algorithm is available in the file "LPMD.py". To use this pipeline, follow these steps:
+
 - Rodar o código presente no ```experimentos_multivariado_classifica.py``` variando os imputadores entre: mean, knn, mice, pmivae, saei; <br>
 
 Com esta etapa cumprida, os resultados da classificação usando a Árvore de Decisão, os arquivos.arff para a análise de complexidade, os resultados da imputação e os tempos de treinamento de cada algoritmo já foram gerados. Portanto, basta seguir os próximos passos:
