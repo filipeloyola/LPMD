@@ -31,7 +31,7 @@ for algorithm in list_algorithms:
 
     # Parâmetros  
     n_metricas = 1
-    model_impt = algorithm # mean, knn, mice, saei, pmivae, lpr0, lpr1, lpr2, lpr3
+    model_impt = algorithm # mean, knn, mice, saei, pmivae, lpmd, lpmd2
     mecanismo = "mar_median" # mnar_mbouv, mnar_mbov_randomess, mar_correlated, mar_median
     abordagem = "Multivariado"
 
