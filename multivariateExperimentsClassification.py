@@ -17,7 +17,7 @@ from mdatagen.multivariate.mMAR import mMAR
 warnings.filterwarnings("ignore")
 
 # Datasets
-main_directory = "/home/filipe/Documentos/GitHub/LP_tests_estrutura_Arthur/Datasets/Selected_datasets"
+main_directory = "/home/filipe/Documentos/GitHub/LPMD/Datasets"
 
 datasets = MyPipeline.load_datasets(main_directory)
 

@@ -1,6 +1,6 @@
 from MyUtils import MyPipeline
 
-path = "/home/filipe/Documentos/GitHub/LabelPropagationComparison/Resultados Multivariado/MNAR-MAR.csv"
+path = "/home/filipe/Documentos/GitHub/LPMD/finalResults/MNAR-MAR.csv"
 
 mecanismo = "mnar"
 estrategia = "mar_median"
