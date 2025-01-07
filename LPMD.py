@@ -26,38 +26,38 @@ from sklearn.cluster import KMeans
 #########################################################
 
 def compara_original(A, B):
-    ''' Substitui os valores de A pelos valores de B, onde B for diferente de np.nan
+    ''' Replaces the values of A with the values of B where B is not np.nan.
         Args:
-        A: Um np.array, referente a Y atual
-        B: Um np.array com as mesmas dimensões de A, referente aos dados iniciais de referência
+        A: A np.array representing the current Y.
+        B: A np.array with the same dimensions as A, representing the reference initial data.
         Returns:
-        Um np.array com os valores de A substituídos.
+        A np.array with the replaced values.
     '''
     A[~np.isnan(B)] = B[~np.isnan(B)]
     return A
 
-# função do algoritmo principal
+# Main algorithm function
 def label_propagation(data_missing, data_mice, epsilon, max_iter):
-    ''' data_missing: np.array contendo os missings
-        data_mice: np.array com imputação pelo método escolhido
-        retorn: np.array preenchido por Label Propagation
-        obs: essa função deve ser chamada por um cluster por vez
-        epsilon: argumento do algoritmo
-        max_iter: número máximo de iterações
+    ''' data_missing: np.array containing missing values.
+        data_mice: np.array with imputation by the chosen method.
+        return: np.array filled by Label Propagation.
+        note: This function must be called for one cluster at a time.
+        epsilon: Argument for the algorithm.
+        max_iter: Maximum number of iterations.
     '''
     
-    # definindo dataref
+    # Defining dataref
     dataref = data_missing.copy()
 
-    # definindo matriz Y
+    # Defining matrix Y
     Y = data_mice.copy()
 
-    # Fazendo matriz W
-    W = rbf_kernel(Y) # Kernel RBF do sklearn com gamma=20
+    # Creating matrix W
+    W = rbf_kernel(Y) # RBF kernel from sklearn with gamma=20
    
-    # Fazendo matriz transição T 
-    normalizer = W.sum(axis=0)     # Inicializa a variável normalizer com a soma de cada coluna
-    W /= normalizer[:, np.newaxis] # Cada valor de W é dividido pela variável normalizar referente a cada coluna
+    # Creating transition matrix T 
+    normalizer = W.sum(axis=0)     # Initializes the normalizer variable with the sum of each column
+    W /= normalizer[:, np.newaxis] # Each value of W is divided by the normalizer value for each column
     T = W
 
     Y_prev = np.zeros((Y.shape[0], Y.shape[1]))
@@ -78,38 +78,38 @@ def label_propagation(data_missing, data_mice, epsilon, max_iter):
 
         Y = safe_sparse_dot(T,Y)
 
-        Y = compara_original(Y, dataref) # voltando para o valor original, no caso de não ser missing
+        Y = compara_original(Y, dataref) # Restoring to the original value, in case it's not missing
     
-    print("Número de iterações: ", iteracoes)
+    print("Number of iterations: ", iteracoes)
 
     return(Y)
 
 
-# função de filtro interquartis
+# Interquartile range filter function
 def remover_outliers_iqr(df):
   """
-  Remove outliers em cada coluna de um dataframe Pandas utilizando o IQR.
+  Removes outliers in each column of a Pandas DataFrame using IQR.
 
-  Argumentos:
-    df: Dataframe Pandas.
+  Arguments:
+    df: Pandas DataFrame.
 
-  Retorna:
-    Dataframe Pandas com outliers substituidos por np.nan.
+  Returns:
+    Pandas DataFrame with outliers replaced by np.nan.
   """
 
   for coluna in df.columns:
-    # Cálculo do primeiro e terceiro quartil
+    # Calculate the first and third quartiles
     q1 = df[coluna].quantile(0.25)
     q3 = df[coluna].quantile(0.75)
 
-    # Cálculo do IQR
+    # Calculate IQR
     iqr = q3 - q1
 
-    # Definição dos limites inferior e superior
+    # Define lower and upper limits
     limite_inferior = q1 - 1.5 * iqr
     limite_superior = q3 + 1.5 * iqr
 
-    # Substituição de outliers por np.nan
+    # Replace outliers with np.nan
     df.loc[df[coluna] < limite_inferior, coluna] = np.nan
     df.loc[df[coluna] > limite_superior, coluna] = np.nan
 
@@ -117,32 +117,32 @@ def remover_outliers_iqr(df):
 
 
 
-# Função para verificar colunas que tenha 100% de valores nulos. Coloca lixo no lugar, para a coluna não apagar durante o preenchimento
+# Function to check columns with 100% null values. Fills with garbage instead of deleting the column during filling.
 
 def preencher_valores_nulos(dataframe):
   """
-  Verifica todas as colunas de um DataFrame e preenche valores nulos com 0.
+  Checks all columns of a DataFrame and fills null values with 0.
 
-  Argumentos:
-    dataframe: O DataFrame a ser analisado.
+  Arguments:
+    dataframe: The DataFrame to be analyzed.
 
-  Retorna:
-    O DataFrame original com os valores nulos preenchidos por 0.
+  Returns:
+    The original DataFrame with null values filled with 0.
   """
 
-  # Verifica se existem colunas com 100% de valores nulos
+  # Checks if there are columns with 100% null values
   for coluna in dataframe.columns:
     if dataframe[coluna].isnull().all():
-      # Preenche os valores nulos com 0
+      # Fills null values with 0
       dataframe[coluna].fillna(0, inplace=True)
 
   return dataframe
 
-# Exemplo de uso
+# Usage example
 dataframe_original = pd.DataFrame({
-  'Coluna 1': [1, 2, np.nan],
-  'Coluna 2': [4, 5, 6],
-  'Coluna 3': [np.nan, np.nan, np.nan]
+  'Column 1': [1, 2, np.nan],
+  'Column 2': [4, 5, 6],
+  'Column 3': [np.nan, np.nan, np.nan]
 })
 
 
@@ -150,107 +150,107 @@ dataframe_original = pd.DataFrame({
 # LPMD: Label Propagation for Missing Data Imputation
 ####################################################################################################
 #
-# Imputação inicial por 0
+# Initial imputation with 0
 #
-# COM divisão de classes no Label Propagation
+# WITH class division in Label Propagation
 #    
-# Imputação secundária por média total (transform)
+# Secondary imputation by total mean (transform)
 #
 #########################################################
 
 class LPMD():
-    ''' Recebe dataframe de dados com o missing
-        Retorna dados completos
+    ''' Receives a dataframe with missing data
+        Returns complete data
     '''
     # -------------------------------------------------------------------------------
     def __init__(self, datacomplete, iteracoes=500, epsilon=1e-32):
-    # Parâmetros
+    # Parameters
         self.max_iter = iteracoes
-        print("max interações: ", self.max_iter )
+        print("max iterations: ", self.max_iter)
         self.epsilon = epsilon
         print("epsilon: ", epsilon)
 
-        # entrada dos dados completos para fazer medida de erro
+        # Input of complete data to calculate error
         self.data = datacomplete
 
     # -------------------------------------------------------------------------------
     def fit(self, datamissing, train_target):       
 
-        # entrada de dados com missing
+        # Input of data with missing values
         self.dataMiss = datamissing
 
-        # entrada de target (somente treino)
+        # Input of target (train only)
         self.train_target = pd.DataFrame(train_target)
 
-        # Número de clusters
+        # Number of clusters
         list_groups = self.train_target[0].unique()
         self.numero_clusters = len(list_groups)
 
-        # criando dataset de referencia
+        # Creating reference dataset
         self.dataref = self.dataMiss
 
-        # fazendo o agrupamento utilizando o target
+        # Grouping using the target
         agrupamento = self.train_target[0]
 
-        # adicionando coluna com informação de cluster no dataset original
+        # Adding a column with cluster information in the original dataset
         self.dataMiss = pd.DataFrame(self.dataMiss)
         self.dataMiss["grupo"] = agrupamento
         Y_ok = self.dataMiss.copy(deep=True)
 
-        # criando dataset que irá receber os valores imputados
+        # Creating a dataset to receive the imputed values
         self.dataImp = self.dataMiss.copy(deep=True)
 
-        # realiza a imputação de -1 no lugar de valores ausentes
+        # Performs imputation of -1 in place of missing values
         self.dataImp.fillna(value=-1, inplace=True)
         
-        # lista auxiliar para receber grupos
+        # Auxiliary list to receive groups
         groups = self.dataImp["grupo"].unique()
 
-        print("Imputado:")
+        print("Imputed:")
         print(self.dataImp.isnull().sum())
 
 
-        # Realizando o Label Propagation Regression para cada classe
+        # Performing Label Propagation Regression for each class
         for i in groups:
            
-            # somente a porção de determinada classe
+            # Only the portion of a specific class
             df_imputed_cluster = self.dataImp.loc[self.dataImp['grupo'] == i]
             df_missing_cluster = self.dataMiss.loc[self.dataMiss['grupo'] == i]
 
-            # deleta informação de cluster
+            # Deletes cluster information
             df_imputed = df_imputed_cluster.drop(columns=["grupo"])
             df_missing = df_missing_cluster.drop(columns=["grupo"])
 
-            # transforma em np.array
+            # Converts to np.array
             df_imputed = df_imputed.to_numpy()
             df_missing = df_missing.to_numpy()
 
-            # chama Label Propagation
+            # Calls Label Propagation
             retorno_lp = label_propagation(df_missing, df_imputed, self.epsilon, self.max_iter)
             
-            # transforma retorno (np.array) em pandas dataframe
+            # Converts return (np.array) to pandas dataframe
             retorno_lp = pd.DataFrame(retorno_lp)
 
-            # colunas do dataframe
+            # Dataframe columns
             colunas = self.dataMiss.columns
-            colunas = colunas[:-1] # colunas sem o cluster
+            colunas = colunas[:-1] # Columns without the cluster
 
-            # dataset para receber dataset de entrada somente com determinado cluster
+            # Dataset to receive input dataset only with a specific cluster
             df_entrada = Y_ok.loc[self.dataMiss['grupo'] == i]
 
-            # passando o indice de um para outro
+            # Transfers index from one to another
             retorno_lp.index = df_entrada.index
             
-            # dataset de entrada recebe saída do label propagation
+            # Input dataset receives output from label propagation
             df_entrada[colunas] = retorno_lp
 
-            # dataset de saída recebe informações atualizadas
+            # Output dataset receives updated information
             Y_ok.loc[self.dataMiss['grupo'] == i] = df_entrada
         
-        # retira informação de target
+        # Removes target information
         Y_ok = Y_ok.drop(columns="grupo")
 
-        # Dataframe preenchido
+        # Filled Dataframe
         self.treino_preenchido = Y_ok
 
         return(self)
@@ -261,230 +261,228 @@ class LPMD():
         if (is_Train):
             Y_ok = self.treino_preenchido
 
-            # de dataframe para numpy array
+            # From dataframe to numpy array
             Y_ok = Y_ok.to_numpy()
 
         else: 
-            # entrada de dados com missing
+            # Input of data with missing values
             self.dataMiss = datamissing
 
-            # verifica o tamanho dos dados de treino
+            # Verifies the size of train data
             tamanho_dados_treino = len(self.treino_preenchido)
 
-            # junta os dados de treino (imputados) com os dados de teste (sem imputar)
+            # Combines train data (imputed) with test data (not imputed)
             X_sem_imputar = np.concatenate([self.treino_preenchido, self.dataMiss])
             
-            # criando dataset de referencia
+            # Creating reference dataset
             self.dataref =  X_sem_imputar
 
-            # imputando através de média
+            # Imputation using mean
             imputer = SimpleImputer(missing_values=np.nan, strategy='mean')
             mean = imputer.fit(X_sem_imputar)
             self.dataImp = mean.transform(X_sem_imputar)
             
-            # fazendo o agrupamento por fast greedy
+            # Grouping using fast greedy
             kmeans = KMeans(n_clusters = self.numero_clusters)
             kmeans.fit(self.dataImp)
             agrupamento = kmeans.labels_
 
-            # adicionando coluna com informação de cluster no dataset original
+            # Adding a column with cluster information in the original dataset
             self.dataMiss = pd.DataFrame(X_sem_imputar)
             self.dataMiss["grupo"] = agrupamento
             Y_ok = self.dataMiss.copy(deep=True)
 
-            # adicionando coluna com informação de cluster no dataset dataImp
+            # Adding a column with cluster information in dataImp dataset
             self.dataImp = pd.DataFrame(self.dataImp)
             self.dataImp["grupo"] = agrupamento
 
-            # lista auxiliar para receber grupos
+            # Auxiliary list to receive groups
             groups = self.dataImp["grupo"].unique()
 
-            # Realizando o Label Propagation Regression para cada cluster
+            # Performing Label Propagation Regression for each cluster
             for i in groups:
             
-                # somente a porção de determinada classe
+                # Only the portion of a specific class
                 df_imputed_cluster = self.dataImp.loc[self.dataImp['grupo'] == i]
                 df_missing_cluster = self.dataMiss.loc[self.dataMiss['grupo'] == i]
 
-                # deleta informação de cluster
+                # Deletes cluster information
                 df_imputed = df_imputed_cluster.drop(columns=["grupo"])
                 df_missing = df_missing_cluster.drop(columns=["grupo"])
 
-                # transforma em np.array
+                # Converts to np.array
                 df_imputed = df_imputed.to_numpy()
                 df_missing = df_missing.to_numpy()
 
-                # chama Label Propagation
+                # Calls Label Propagation
                 retorno_lp = label_propagation(df_missing, df_imputed, self.epsilon, self.max_iter)
                 
-                # transforma retorno (np.array) em pandas dataframe
+                # Converts return (np.array) to pandas dataframe
                 retorno_lp = pd.DataFrame(retorno_lp)
 
-                # colunas do dataframe
+                # Dataframe columns
                 colunas = self.dataMiss.columns
-                colunas = colunas[:-1] # colunas sem o cluster
+                colunas = colunas[:-1] # Columns without the cluster
 
-                # dataset para receber dataset de entrada somente com determinado cluster
+                # Dataset to receive input dataset only with a specific cluster
                 df_entrada = Y_ok.loc[self.dataMiss['grupo'] == i]
 
-                # passando o indice de um para outro
+                # Transfers index from one to another
                 retorno_lp.index = df_entrada.index
                 
-                # dataset de entrada recebe saída do label propagation
+                # Input dataset receives output from label propagation
                 df_entrada[colunas] = retorno_lp
 
-                # dataset de saída recebe informações atualizadas
+                # Output dataset receives updated information
                 Y_ok.loc[self.dataMiss['grupo'] == i] = df_entrada
             
-            # retira informação de target
+            # Removes target information
             Y_ok = Y_ok.drop(columns="grupo")
 
-            # de dataframe para numpy array
+            # From dataframe to numpy array
             Y_ok = Y_ok.to_numpy()
 
-            # Fatia o dataset imputado concatenado para obter apenas os dados de teste (output_md_test)
+            # Slices the concatenated imputed dataset to get only test data (output_md_test)
             Y_ok = Y_ok[tamanho_dados_treino:]
 
 
         return(Y_ok)
-
-
-
+    
 
 #########################################################
 # LPMD2: Label Propagation for Missing Data Imputation 2
 #########################################################
 #
-# Imputação inicial por média da classe (FIT)
+# Initial imputation by class mean (FIT)
 #    
-# Realiza filtro por intervavo interquatil (substitue os outlier por missing)
+# Performs filtering using interquartile range (replaces outliers with missing)
 #
-# COM divisão de classes
+# WITH class division
 #    
-# Imputação secundária por Média (Transform)
+# Secondary imputation by mean (Transform)
 #
-# Realiza o filtro no PREDICT
+# Applies the filter during PREDICT
 #
 #########################################################
 
 class LPMD2():
-    ''' Recebe dataframe de dados com o missing
-        Retorna dados completos
+    ''' Receives a dataframe with missing data
+        Returns complete data
     '''
     # -------------------------------------------------------------------------------
     def __init__(self, datacomplete, iteracoes=500, epsilon=1e-32):
-    # Parâmetros
+    # Parameters
         self.max_iter = iteracoes
-        print("max interações: ", self.max_iter )
+        print("max iterations: ", self.max_iter )
         self.epsilon = epsilon
         print("epsilon: ", epsilon)
 
-        # entrada dos dados completos para fazer medida de erro
+        # Input complete data for error measurement
         self.data = datacomplete
 
     # -------------------------------------------------------------------------------
     def fit(self, datamissing, train_target):       
 
-        # entrada de dados com missing
+        # Input data with missing values
         self.dataMiss = datamissing
 
-        # entrada de target (somente treino)
+        # Input target (training only)
         self.train_target = pd.DataFrame(train_target)
 
-        # Número de clusters
+        # Number of clusters
         list_groups = self.train_target[0].unique()
         self.numero_clusters = len(list_groups)
 
-        # criando dataset de referencia
+        # Creating reference dataset
         self.dataref = self.dataMiss
 
-        # fazendo o agrupamento utilizando o target
+        # Grouping using the target
         agrupamento = self.train_target[0]
 
-        # adicionando coluna com informação de cluster no dataset original
+        # Adding a column with cluster information to the original dataset
         self.dataMiss = pd.DataFrame(self.dataMiss)
         self.dataMiss["grupo"] = agrupamento
         Y_ok = self.dataMiss.copy(deep=True)
 
-        # criando dataset que irá receber os valores imputados
+        # Creating a dataset to receive the imputed values
         self.dataImp = self.dataMiss.copy(deep=True)
         print("dataImp: ", self.dataImp.shape)
 
-        # criando objeto de imputador pela média
+        # Creating an imputer object using the mean
         imputer = SimpleImputer(missing_values=np.nan, strategy='mean')
         
-        # lista auxiliar para receber grupos
+        # Auxiliary list to hold groups
         groups = self.dataImp["grupo"].unique()
 
-        # processo de imputação para cada classe
+        # Imputation process for each class
         for i in groups:
 
-            # somente a porção de determinada classe
+            # Only the portion of the specified class
             df_imputed_classe = self.dataImp.loc[self.dataImp['grupo'] == i]
             cols = df_imputed_classe.columns
             print("df_imputed_classe: ", type(df_imputed_classe))
             print(df_imputed_classe.shape)
             print(df_imputed_classe)
 
-            # passa pelo filtro de interquartis
+            # Pass through the interquartile range filter
             df_imputed_classe = remover_outliers_iqr(df_imputed_classe.copy())
 
-            # verifica se alguma coluna possui 100% de missing. Se sim, insere lixo no lugar. Foi necessário, para que essa coluna não suma
+            # Check if any column has 100% missing values. If so, insert placeholder values to prevent the column from disappearing
             df_imputed_classe = preencher_valores_nulos(df_imputed_classe.copy())
 
-            # fit imputer
+            # Fit the imputer
             mean = imputer.fit(df_imputed_classe)
 
-            # transform
+            # Transform
             dataImp_classe = mean.transform(df_imputed_classe)
-            print("Tipos de dado: ", type(dataImp_classe))
+            print("Data types: ", type(dataImp_classe))
             print(dataImp_classe)
 
-            # recebe os valores imputados
+            # Assign the imputed values
             self.dataImp.loc[self.dataImp['grupo'] == i] = dataImp_classe
 
 
-        # Realizando o Label Propagation Regression para cada classe
+        # Performing Label Propagation Regression for each class
         for i in groups:
            
-            # somente a porção de determinada classe
+            # Only the portion of the specified class
             df_imputed_cluster = self.dataImp.loc[self.dataImp['grupo'] == i]
             df_missing_cluster = self.dataMiss.loc[self.dataMiss['grupo'] == i]
 
-            # deleta informação de cluster
+            # Delete cluster information
             df_imputed = df_imputed_cluster.drop(columns=["grupo"])
             df_missing = df_missing_cluster.drop(columns=["grupo"])
 
-            # transforma em np.array
+            # Convert to numpy array
             df_imputed = df_imputed.to_numpy()
             df_missing = df_missing.to_numpy()
 
-            # chama Label Propagation
+            # Call Label Propagation
             retorno_lp = label_propagation(df_missing, df_imputed, self.epsilon, self.max_iter)
             
-            # transforma retorno (np.array) em pandas dataframe
+            # Convert return (np.array) to pandas dataframe
             retorno_lp = pd.DataFrame(retorno_lp)
 
-            # colunas do dataframe
+            # Dataframe columns
             colunas = self.dataMiss.columns
-            colunas = colunas[:-1] # colunas sem o cluster
+            colunas = colunas[:-1] # Columns without the cluster
 
-            # dataset para receber dataset de entrada somente com determinado cluster
+            # Dataset to hold input data for the specified cluster
             df_entrada = Y_ok.loc[self.dataMiss['grupo'] == i]
 
-            # passando o indice de um para outro
+            # Pass the index from one to another
             retorno_lp.index = df_entrada.index
             
-            # dataset de entrada recebe saída do label propagation
+            # Input dataset receives output from label propagation
             df_entrada[colunas] = retorno_lp
 
-            # dataset de saída recebe informações atualizadas
+            # Output dataset receives updated information
             Y_ok.loc[self.dataMiss['grupo'] == i] = df_entrada
         
-        # retira informação de target
+        # Remove target information
         Y_ok = Y_ok.drop(columns="grupo")
 
-        # Dataframe preenchido
+        # Filled dataframe
         self.treino_preenchido = Y_ok
 
         return(self)
@@ -495,100 +493,99 @@ class LPMD2():
         if (is_Train):
             Y_ok = self.treino_preenchido
 
-            # de dataframe para numpy array
+            # Convert from dataframe to numpy array
             Y_ok = Y_ok.to_numpy()
 
         else: 
-            # entrada de dados com missing
+            # Input data with missing values
             self.dataMiss = datamissing
 
-            # verifica o tamanho dos dados de treino
+            # Check the size of the training data
             tamanho_dados_treino = len(self.treino_preenchido)
 
-            # junta os dados de treino (imputados) com os dados de teste (sem imputar)
+            # Combine the training data (imputed) with the test data (not imputed)
             X_sem_imputar = np.concatenate([self.treino_preenchido, self.dataMiss])
             
-            # criando dataset de referencia
+            # Creating reference dataset
             self.dataref =  X_sem_imputar
 
-            # imputando através de MEAN
+            # Impute using MEAN
             imputer = SimpleImputer(missing_values=np.nan, strategy='mean')
             mean = imputer.fit(X_sem_imputar)
             self.dataImp = mean.transform(X_sem_imputar)
             
-            # fazendo o agrupamento por fast greedy
+            # Perform clustering using fast greedy
             kmeans = KMeans(n_clusters = self.numero_clusters)
             kmeans.fit(self.dataImp)
             agrupamento = kmeans.labels_
 
-            # adicionando coluna com informação de cluster no dataset original
+            # Add a column with cluster information to the original dataset
             self.dataMiss = pd.DataFrame(X_sem_imputar)
             self.dataMiss["grupo"] = agrupamento
             Y_ok = self.dataMiss.copy(deep=True)
 
-            # adicionando coluna com informação de cluster no dataset dataImp
+            # Add a column with cluster information to the dataImp dataset
             self.dataImp = pd.DataFrame(self.dataImp)
             self.dataImp["grupo"] = agrupamento
 
-            # lista auxiliar para receber grupos
+            # Auxiliary list to hold groups
             groups = self.dataImp["grupo"].unique()
 
-            # Realizando o Label Propagation Regression para cada cluster
+            # Performing Label Propagation Regression for each cluster
             for i in groups:
             
-                # somente a porção de determinada classe
+                # Only the portion of the specified class
                 df_imputed_cluster = self.dataImp.loc[self.dataImp['grupo'] == i]
                 df_missing_cluster = self.dataMiss.loc[self.dataMiss['grupo'] == i]
 
-                # deleta informação de cluster
+                # Delete cluster information
                 df_imputed = df_imputed_cluster.drop(columns=["grupo"])
                 df_missing = df_missing_cluster.drop(columns=["grupo"])
 
-                # passa pelo filtro de interquartis
+                # Pass through the interquartile range filter
                 df_imputed = remover_outliers_iqr(df_imputed.copy())
 
-                # preenche os valores filtrados com a média 
+                # Fill the filtered values with the mean
                 mean = imputer.fit(df_imputed)
 
-                # transform (imputer)
+                # Transform (imputer)
                 df_imputed = mean.transform(df_imputed.copy())
 
-                # transforma em np.array
-                #df_imputed = df_imputed.to_numpy() # quando faz o imputed já retorna numpy
+                # Convert to numpy array
+                # df_imputed = df_imputed.to_numpy() # When imputed, it already returns numpy
                 df_missing = df_missing.to_numpy()
 
-                # chama Label Propagation
+                # Call Label Propagation
                 retorno_lp = label_propagation(df_missing, df_imputed, self.epsilon, self.max_iter)
                 
-                # transforma retorno (np.array) em pandas dataframe
+                # Convert return (np.array) to pandas dataframe
                 retorno_lp = pd.DataFrame(retorno_lp)
 
-                # colunas do dataframe
+                # Dataframe columns
                 colunas = self.dataMiss.columns
-                colunas = colunas[:-1] # colunas sem o cluster
+                colunas = colunas[:-1] # Columns without the cluster
 
-                # dataset para receber dataset de entrada somente com determinado cluster
+                # Dataset to hold input data for the specified cluster
                 df_entrada = Y_ok.loc[self.dataMiss['grupo'] == i]
 
-                # passando o indice de um para outro
+                # Pass the index from one to another
                 retorno_lp.index = df_entrada.index
                 
-                # dataset de entrada recebe saída do label propagation
+                # Input dataset receives output from label propagation
                 df_entrada[colunas] = retorno_lp
 
-                # dataset de saída recebe informações atualizadas
+                # Output dataset receives updated information
                 Y_ok.loc[self.dataMiss['grupo'] == i] = df_entrada
             
-            # retira informação de target
+            # Remove target information
             Y_ok = Y_ok.drop(columns="grupo")
 
-            # de dataframe para numpy array
+            # Convert from dataframe to numpy array
             Y_ok = Y_ok.to_numpy()
 
-            # Fatia o dataset imputado concatenado para obter apenas os dados de teste (output_md_test)
+            # Slice the concatenated imputed dataset to get only the test data (output_md_test)
             Y_ok = Y_ok[tamanho_dados_treino:]
 
 
         return(Y_ok)
-
 
