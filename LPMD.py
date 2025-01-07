@@ -158,7 +158,7 @@ dataframe_original = pd.DataFrame({
 #
 #########################################################
 
-class LabelPropagationRegression3():
+class LPMD():
     ''' Recebe dataframe de dados com o missing
         Retorna dados completos
     '''
@@ -367,7 +367,7 @@ class LabelPropagationRegression3():
 #
 #########################################################
 
-class LabelPropagationRegression2():
+class LPMD2():
     ''' Recebe dataframe de dados com o missing
         Retorna dados completos
     '''
