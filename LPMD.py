@@ -39,7 +39,7 @@ def compara_original(A, B):
 # Main algorithm function
 def label_propagation(data_missing, data_complete, epsilon, max_iter):
     ''' data_missing: np.array containing missing values.
-        data_mice: np.array with imputation by the chosen method.
+        data_complete: np.array with imputation by -1.
         return: np.array filled by Label Propagation.
         note: This function must be called for one cluster at a time.
         epsilon: Argument for the algorithm.
@@ -47,21 +47,26 @@ def label_propagation(data_missing, data_complete, epsilon, max_iter):
     '''
     
     # Defining dataref
-    dataref = data_complete.copy()
+    dataref = data_missing.copy()
+    #print("dataref: ", dataref)
 
     # Defining matrix Y
     Y = data_complete.copy()
+    #print("Y shape: ", Y.shape)
+    #print("Y inicial: ", Y)
 
     # Creating matrix W
     W = rbf_kernel(Y) # RBF kernel from sklearn with gamma=(1/n_features)
-    print("W shape: ", W.shape)
-    print("W: ", W)
+    #print("W shape: ", W.shape)
+    #print("W: ", W)
    
    
     # Creating transition matrix T 
     normalizer = W.sum(axis=0)     # Initializes the normalizer variable with the sum of each column
     W /= normalizer[:, np.newaxis] # Each value of W is divided by the normalizer value for each column
     T = W
+    #print("T shape: ", T.shape)
+    #print("T: ", T)
 
     Y_prev = np.zeros((Y.shape[0], Y.shape[1]))
 
@@ -69,19 +74,23 @@ def label_propagation(data_missing, data_complete, epsilon, max_iter):
 
     for n_iter in range(max_iter):
 
-        iteracoes += 1 
+        iteracoes += 1
 
         dif = np.abs(Y - Y_prev).sum()
-        print(dif)
+        print("Dif: ", dif)
 
         if dif < epsilon:
             break
-
+        
         Y_prev = Y
 
         Y = safe_sparse_dot(T,Y)
 
         Y = compara_original(Y, dataref) # Restoring to the original value, in case it's not missing
+
+        print("Iteration: ", iteracoes)
+        print("Y: ", Y)
+
     
     print("Number of iterations: ", iteracoes)
 
