@@ -18,8 +18,10 @@ This repository contains files about the article "A Label Propagation Approach f
 
 https://doi.org/10.1109/ACCESS.2025.3559772
 
-## Citation
-@ARTICLE{10960704,
+## Citation Research Article
+If you use LPMD in your research, please cite our research article as below.
+
+@ARTICLE{LOPES2025,
   author={Loyola Lopes, Filipe and Dantas Mangussi, Arthur and Cardoso Pereira, Ricardo and Seoane Santos, Miriam and Henriques Abreu, Pedro and Carolina Lorena, Ana},
   journal={IEEE Access}, 
   title={A Label Propagation Approach for Missing Data Imputation}, 
@@ -29,6 +31,22 @@ https://doi.org/10.1109/ACCESS.2025.3559772
   pages={65925-65938},
   keywords={Imputation;Nearest neighbor methods;Amputation;Data models;Classification algorithms;Autoencoders;Support vector machines;Statistical analysis;Semisupervised learning;Self-organizing feature maps;Label propagation;missing data;data imputation;data amputation},
   doi={10.1109/ACCESS.2025.3559772}}
+
+
+## Citation for the mdatagen package by Mangussi et al. (2025):
+If you need to use the data amputation library, please cite the research below.
+
+@article{MANGUSSI2025,
+title = {mdatagen: A python library for the artificial generation of missing data},
+journal = {Neurocomputing},
+volume = {625},
+pages = {129478},
+year = {2025},
+issn = {0925-2312},
+doi = {https://doi.org/10.1016/j.neucom.2025.129478},
+url = {https://www.sciencedirect.com/science/article/pii/S092523122500150X},
+author = {Arthur Dantas Mangussi and Miriam Seoane Santos and Filipe Loyola Lopes and Ricardo Cardoso Pereira and Ana Carolina Lorena and Pedro Henriques Abreu}
+}
 
 ## Acknowledgements
 This work was supported in part by the Coordenação de Aperfeiçoamento de Pessoal de Nível Superior - Brasil (CAPES) - Finance Code
