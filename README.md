@@ -14,6 +14,10 @@ This repository contains files about the article "A Label Propagation Approach f
   
 - In Excel, format the table and place conditional formatting for values ​​greater than zero;
 
+## Research Article
+
+https://doi.org/10.1109/ACCESS.2025.3559772
+
 ## Citation
 @ARTICLE{10960704,
   author={Loyola Lopes, Filipe and Dantas Mangussi, Arthur and Cardoso Pereira, Ricardo and Seoane Santos, Miriam and Henriques Abreu, Pedro and Carolina Lorena, Ana},
