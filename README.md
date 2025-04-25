@@ -15,7 +15,16 @@ This repository contains files about the article "A Label Propagation Approach f
 - In Excel, format the table and place conditional formatting for values ​​greater than zero;
 
 ## Citation
-In construction.
+@ARTICLE{10960704,
+  author={Loyola Lopes, Filipe and Dantas Mangussi, Arthur and Cardoso Pereira, Ricardo and Seoane Santos, Miriam and Henriques Abreu, Pedro and Carolina Lorena, Ana},
+  journal={IEEE Access}, 
+  title={A Label Propagation Approach for Missing Data Imputation}, 
+  year={2025},
+  volume={13},
+  number={},
+  pages={65925-65938},
+  keywords={Imputation;Nearest neighbor methods;Amputation;Data models;Classification algorithms;Autoencoders;Support vector machines;Statistical analysis;Semisupervised learning;Self-organizing feature maps;Label propagation;missing data;data imputation;data amputation},
+  doi={10.1109/ACCESS.2025.3559772}}
 
 ## Acknowledgements
 This work was supported in part by the Coordenação de Aperfeiçoamento de Pessoal de Nível Superior - Brasil (CAPES) - Finance Code
