@@ -37,7 +37,7 @@ def compara_original(A, B):
     return A
 
 # Main algorithm function
-def label_propagation(data_missing, data_mice, epsilon, max_iter):
+def label_propagation(data_missing, data_complete, epsilon, max_iter):
     ''' data_missing: np.array containing missing values.
         data_mice: np.array with imputation by the chosen method.
         return: np.array filled by Label Propagation.
@@ -47,13 +47,16 @@ def label_propagation(data_missing, data_mice, epsilon, max_iter):
     '''
     
     # Defining dataref
-    dataref = data_missing.copy()
+    dataref = data_complete.copy()
 
     # Defining matrix Y
-    Y = data_mice.copy()
+    Y = data_complete.copy()
 
     # Creating matrix W
-    W = rbf_kernel(Y) # RBF kernel from sklearn with gamma=20
+    W = rbf_kernel(Y) # RBF kernel from sklearn with gamma=(1/n_features)
+    print("W shape: ", W.shape)
+    print("W: ", W)
+   
    
     # Creating transition matrix T 
     normalizer = W.sum(axis=0)     # Initializes the normalizer variable with the sum of each column
@@ -185,6 +188,7 @@ class LPMD():
         # Number of clusters
         list_groups = self.train_target[0].unique()
         self.numero_clusters = len(list_groups)
+        print("Number of clusters: ", self.numero_clusters)
 
         # Creating reference dataset
         self.dataref = self.dataMiss
